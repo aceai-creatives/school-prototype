@@ -18,14 +18,14 @@ jobs:
             - name: Install Bun
               run: curl -fsSL https://bun.sh/install | bash
 
+            - name: Add Bun to PATH
+              run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
             - name: Install Dependencies
               run: bun install
 
             - name: Build Project
               run: bun run build
-              
-            - name: Add Bun to PATH
-              run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
             - name: Install Vercel CLI
               run: bun install --global vercel
